@@ -34,25 +34,26 @@ neural\[config\] develops cutting-edge AI solutions while maintaining robust sec
 ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
 
 ## Development Standards
-
 Our projects adhere to enterprise-grade development practices:
-
 - Comprehensive CI/CD pipelines
 - Robust security scanning and vulnerability management
 - Detailed documentation and architectural diagrams
 - Test-driven development methodology
 
 ## Getting Started
-
 Each repository includes detailed setup instructions and documentation. Our projects follow consistent patterns for ease of understanding and implementation.
 
 ## Contributing
-
-We welcome contributions that align with our mission of advancing AI and security practices. Please review our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+We welcome contributions that align with our mission of advancing AI and security practices. Please review our [Contributing Guidelines](../CONTRIBUTING.md) for more information.
 
 ## Security
+Security is at the core of everything we do. For details about our security practices and reporting vulnerabilities, please see our [Security Policy](../SECURITY.md).
 
-Security is at the core of everything we do. For details about our security practices and reporting vulnerabilities, please see our [Security Policy](SECURITY.md).
+## Support
+Need help with one of our projects? Check our [Support Guidelines](../SUPPORT.md) for information about getting assistance and connecting with our community.
+
+## Code of Conduct
+We maintain a welcoming and inclusive environment for all contributors. Please read our [Code of Conduct](../CODE_OF_CONDUCT.md) to understand our community standards.
 
 ## Contact
 
