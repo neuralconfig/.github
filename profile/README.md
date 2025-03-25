@@ -2,6 +2,9 @@
 
 Advancing the intersection of Artificial Intelligence, Cybersecurity, and Network Engineering through innovative solutions and enterprise-grade implementations.
 
+![GitHub last commit](https://img.shields.io/github/last-commit/neuralconfig/neuralconfig?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)
+
 ## Our Mission
 
 neural\[config\] develops cutting-edge AI solutions while maintaining robust security practices. We specialize in:
@@ -9,17 +12,22 @@ neural\[config\] develops cutting-edge AI solutions while maintaining robust sec
 - AI-powered security analysis and threat detection
 - Neural network optimization for enterprise environments
 - Secure machine learning pipeline development
-- Network systems engineering with AI integration
+- Network infrastructure automation with AI integration
+- Retrieval Augmented Generation (RAG) systems
 
 ## Featured Projects
 
-### AI Solutions
-- **[Project Name]** - Brief description of your primary AI project
-- **[Project Name]** - Brief description of another key AI initiative
+### AI-Powered Network Management
+- **[osTicket Network Agent](https://github.com/neuralconfig/osticket-agent)** - Automated network operations assistant that uses Claude 3.5 Haiku to interpret tickets and manage RUCKUS ICX switches. Features automatic VLAN management, port configuration, and PoE control with intelligent verification.
 
-### Cybersecurity
-- **[Project Name]** - Description of main security project
-- **[Project Name]** - Description of another security implementation
+### Intelligent Chat Applications
+- **[OpenRouter Chat App](https://github.com/neuralconfig/openrouter-chat-app)** - A sophisticated Flask-based application demonstrating modern AI integration through OpenRouter's API. Built with a clean, responsive design and enterprise-grade security practices.
+
+### Retrieval Augmented Generation (RAG)
+- **[Survival RAG](https://github.com/neuralconfig/survival-rag)** - Knowledge retrieval system built with LlamaIndex, ChromaDB, and Ollama that provides contextual information from a specialized document corpus, demonstrating efficient CPU-based embeddings and incremental indexing.
+
+### Security Analytics
+- **[PFLogs Project](https://github.com/neuralconfig/pflogs)** - Machine learning enhanced security analysis system for PF-based firewalls that identifies attack patterns, predicts threats, and generates security recommendations using IP geolocation and threat intelligence.
 
 ## Technology Stack
 
@@ -27,33 +35,59 @@ neural\[config\] develops cutting-edge AI solutions while maintaining robust sec
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![LlamaIndex](https://img.shields.io/badge/LlamaIndex-%23236767.svg?style=for-the-badge&logo=llama&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-%23000000.svg?style=for-the-badge&logo=llamacpp&logoColor=white)
+
+### LLM Integration
+![Claude](https://img.shields.io/badge/Claude%203.5-%239146FF.svg?style=for-the-badge&logo=anthropic&logoColor=white)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-%234285F4.svg?style=for-the-badge&logo=openai&logoColor=white)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-%23FF9A00.svg?style=for-the-badge&logo=huggingface&logoColor=white)
+
+### Vector Databases & Embeddings
+![ChromaDB](https://img.shields.io/badge/ChromaDB-%23121011.svg?style=for-the-badge&logo=chroma&logoColor=white)
+![SentenceTransformers](https://img.shields.io/badge/SentenceTransformers-%23FF6F61.svg?style=for-the-badge&logo=huggingface&logoColor=white)
 
 ### Security & Infrastructure
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+
+## AI Solution Architecture Expertise
+
+Our projects demonstrate expertise in:
+
+- **LLM Integration**: Implementing Claude and other models with proper prompt engineering
+- **Multi-modal AI Systems**: Combining different AI capabilities into cohesive solutions
+- **Retrieval Augmented Generation**: Building systems that connect LLMs to specialized knowledge
+- **Secure AI Development**: Implementing best practices for AI system security
+- **Network Automation**: Creating agents that understand and manage network infrastructure
+- **Scalable Architectures**: Designing systems with proper vector storage and efficient embeddings
 
 ## Development Standards
+
 Our projects adhere to enterprise-grade development practices:
+
 - Comprehensive CI/CD pipelines
 - Robust security scanning and vulnerability management
 - Detailed documentation and architectural diagrams
 - Test-driven development methodology
+- Type-safe Python with mypy validation
 
 ## Getting Started
+
 Each repository includes detailed setup instructions and documentation. Our projects follow consistent patterns for ease of understanding and implementation.
 
 ## Contributing
-We welcome contributions that align with our mission of advancing AI and security practices. Please review our [Contributing Guidelines](../CONTRIBUTING.md) for more information.
+
+We welcome contributions that align with our mission of advancing AI and security practices. Please review our [Contributing Guidelines](CONTRIBUTING.md) for more information.
 
 ## Security
-Security is at the core of everything we do. For details about our security practices and reporting vulnerabilities, please see our [Security Policy](../SECURITY.md).
 
-## Support
-Need help with one of our projects? Check our [Support Guidelines](../SUPPORT.md) for information about getting assistance and connecting with our community.
-
-## Code of Conduct
-We maintain a welcoming and inclusive environment for all contributors. Please read our [Code of Conduct](../CODE_OF_CONDUCT.md) to understand our community standards.
+Security is at the core of everything we do. For details about our security practices and reporting vulnerabilities, please see our [Security Policy](SECURITY.md).
 
 ## Contact
 
@@ -69,4 +103,4 @@ Our projects are typically released under the MIT License unless otherwise speci
 
 ---
 
-*neural\[config\] - Advancing AI, Cybersecurity, and Network Engineering*
+*neural[config] - Advancing AI, Cybersecurity, and Network Engineering*
