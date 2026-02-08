@@ -1,44 +1,17 @@
 # Security Policy
 
-## Reporting Security Issues
+## Reporting Vulnerabilities
 
-If you discover a security issue in any neural\[config\] project, please report it by emailing security@neuralconfig.com. Do NOT create a public GitHub issue for security vulnerabilities.
+If you find a security issue in any neural\[config\] project, please email security@neuralconfig.com rather than opening a public issue.
 
-Please include:
+Include:
 - Description of the vulnerability
 - Steps to reproduce
 - Potential impact
-- Suggested fix (if any)
 
-## Security Standards
+## Security Practices
 
-Our projects adhere to the following security principles:
-
-1. Zero Trust Architecture
-   - All access must be authenticated and authorized
-   - Least privilege access control
-   - Regular access reviews
-
-2. Data Protection
-   - Encryption at rest and in transit
-   - Secure key management
-   - Regular security assessments
-
-3. Code Security
-   - Regular dependency updates
-   - Automated security scanning
-   - Secure development practices
-
-4. Compliance
-   - Regular security audits
-   - Compliance with industry standards
-   - Documentation of security controls
-
-## Security Measures
-- Automated security scanning in CI/CD pipeline
-- Regular dependency updates
-- Code review requirements
-- Security testing requirements
-- Incident response procedures
-
----
+- Dependencies kept updated
+- Secrets managed through environment variables, never hardcoded
+- API credentials use OAuth2 or token-based auth
+- Code linted and type-checked (mypy)

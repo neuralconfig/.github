@@ -1,15 +1,6 @@
 # .github
-Organization profile and community health files for neural[config]
 
-This repository contains the organization profile page and community health files for neural[config], a company specializing in the intersection of Artificial Intelligence, Cybersecurity, and Network Engineering.
+Organization profile and community health files for [neural\[config\]](https://github.com/neuralconfig).
 
-## Featured Technologies
-- AI-powered network management
-- Enterprise network infrastructure automation
-- Agentic AI systems
-- Retrieval Augmented Generation (RAG)
-- WiFi deployment and testing tools
-- RUCKUS network solutions
-
-![GitHub last commit](https://img.shields.io/github/last-commit/neuralconfig/neuralconfig?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)
+- `profile/README.md` — Organization profile displayed at [github.com/neuralconfig](https://github.com/neuralconfig)
+- Community health files (contributing guidelines, code of conduct)

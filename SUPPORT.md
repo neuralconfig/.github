@@ -1,19 +1,12 @@
 # Support
 
-For support with neural\[config\] projects:
+If you need help with any neural\[config\] project:
 
-1. Check existing documentation
-2. Search closed issues
-3. Create a new issue with:
-   - Clear description
+1. Check the project's README and documentation
+2. Search existing issues (open and closed)
+3. Open a new issue with:
+   - Clear description of the problem
    - Steps to reproduce
-   - Expected vs actual behavior
-   - Environment details
+   - Your environment (OS, Python version, etc.)
 
-Enterprise support available at support@neuralconfig.com
-
-## Response Times
-- Critical issues: 4 hours
-- High priority: 8 hours
-- Normal priority: 24 hours
-- Low priority: 48 hours
+For questions or collaboration: contact@neuralconfig.com

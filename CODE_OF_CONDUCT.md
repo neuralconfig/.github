@@ -1,8 +1,8 @@
 # Code of Conduct
 
-## Our Pledge
+## Pledge
 
-We are committed to creating a professional, inclusive, and collaborative environment for all contributors, regardless of background or experience level.
+I'm committed to maintaining a professional, inclusive, and collaborative environment for all contributors, regardless of background or experience level.
 
 ## Standards
 
@@ -27,6 +27,4 @@ Violations of this code of conduct may result in:
 2. Temporary contribution restriction
 3. Permanent contribution restriction
 
-Report violations to conduct@neuralconfig.com
-
----
+Report violations to contact@neuralconfig.com
