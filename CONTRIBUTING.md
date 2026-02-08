@@ -1,6 +1,6 @@
 # Contributing to neural\[config\] Projects
 
-Thank you for your interest in contributing to neural\[config\]'s projects. We are committed to maintaining high standards of code quality, security, and documentation across our enterprise solutions.
+Thanks for your interest in contributing. These guidelines apply across all neural\[config\] repositories.
 
 ## Development Process
 
@@ -9,11 +9,10 @@ Thank you for your interest in contributing to neural\[config\]'s projects. We a
 - `fix/` - Bug fixes
 - `security/` - Security-related changes
 - `docs/` - Documentation updates
-- `azure/` - Azure-specific implementations
 - `integration/` - Service integration work
 
 ### Commit Message Format
-We follow the Conventional Commits specification:
+Follow the Conventional Commits specification:
 ```
 <type>: <description>
 
@@ -33,17 +32,14 @@ Types:
 
 ### Pull Request Process
 1. Create a branch using the naming convention above
-2. Make your changes following our code style guidelines
+2. Make your changes following the code style guidelines
 3. Update documentation as needed
 4. Submit a pull request with a clear description of changes
 5. Ensure all automated checks pass
-6. Request review from appropriate team members
+6. Request review
 
 ### Code Style
-- Follow Microsoft's coding conventions for your language
-- Include comprehensive comments and documentation
+- Follow the existing code style in each project (Black, flake8, mypy)
 - Write clear, self-documenting code
 - Include appropriate error handling
 - Add unit tests for new functionality
-
----
