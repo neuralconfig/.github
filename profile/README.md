@@ -1,42 +1,76 @@
 # neural\[config\]
 
-I'm a network engineer with 20+ years of enterprise infrastructure experience (CISSP, CCNP, CWDP/CWSP) who builds AI-powered tools that solve real network operations problems. My projects aren't demos or tutorials — they're tools I built to automate work I was doing by hand.
+I'm a network engineer with 20+ years of enterprise infrastructure experience (CISSP, CCNP, CWDP/CWSP) who builds AI-powered tools that solve real network operations problems. Most of my projects started the same way — I was doing something manually, realized it followed a pattern, and built a tool to handle it.
 
 ## Featured Projects
 
 ### [device-profiler](https://github.com/neuralconfig/device-profiler)
 
-**Problem:** IoT devices connecting to the network get stuck on quarantine VLANs because traditional profiling methods (MAC OUI, DHCP fingerprinting) aren't reliable enough on their own.
+**Problem:** IoT and headless devices can't do 802.1X authentication, so they
+land on a quarantine VLAN and stay there until someone manually profiles and
+provisions them.
 
-**Solution:** Multi-method device detection that combines MAC OUI lookup, LLDP/CDP neighbor data, DHCP fingerprinting, SNMP queries, and HTTP probing into a weighted scoring system. A state machine tracks each device through discovery, profiling, and classification stages, then pushes the result to RADIUS for automatic VLAN assignment.
+**Solution:** A seven-stage profiling pipeline that combines Fingerbank API
+lookups, MAC vendor matching, Nmap port scanning, DNS pattern analysis, PoE
+power draw, LLDP data, and DHCP hostname fingerprinting into a weighted scoring
+system. Each method contributes a confidence score, and the aggregate determines
+device classification. A state machine moves each device through discovery →
+fingerprinting → classification → RADIUS registration → production VLAN,
+targeting ~30 seconds end-to-end.
 
-**Key decisions:** Weighted scoring over hard rules because no single detection method is reliable for IoT. State machine architecture because device profiling is inherently a multi-step process with retries and timeouts.
+**Stack:** Python/FastAPI backend, React dashboard, Cloudpath RADIUS integration.
 
 ### [osticket-agent](https://github.com/neuralconfig/osticket-agent)
 
-**Problem:** Network support tickets ("port 3 in room 214 needs to be on VLAN 100") require a human to read the ticket, SSH into the switch, run commands, verify the change, and update the ticket. Repetitive work that follows predictable patterns.
+**Problem:** Network support tickets ("move port 3 in room 214 to VLAN 100")
+follow predictable patterns, but still require a human to SSH into a switch,
+run commands, verify the change, and update the ticket.
 
-**Solution:** An autonomous AI agent using Claude 3.5 Haiku and HuggingFace's smolagents framework. The agent reads tickets from osTicket's API, interprets what's being asked, builds an execution plan, SSHs into the correct RUCKUS ICX switch, runs the commands, verifies the result, and updates the ticket — all without human intervention.
+**Solution:** An autonomous agent using Claude 3.5 Haiku and HuggingFace's
+smolagents framework. The agent polls osTicket for new tickets, interprets
+what's being asked, SSHs into the correct RUCKUS ICX switch, executes the
+changes (VLAN assignments, port enable/disable, PoE control), verifies the
+result, and closes the ticket.
 
-**What makes it interesting:** This isn't a chatbot or a script with an LLM bolted on. It's a true agentic loop where the AI reasons about what commands to run, handles unexpected switch output, and decides whether the task succeeded or needs a different approach.
+**What makes it interesting:** Not a chatbot. The smolagents agentic loop means
+the LLM reasons about which tool to call, interprets switch output it hasn't
+seen before, and decides whether to retry or escalate. Four-layer architecture:
+network operations → AI tool wrappers → osTicket API client → agent framework.
 
 ### [ruckus-ztp](https://github.com/neuralconfig/ruckus-ztp)
 
-**Problem:** Provisioning new RUCKUS ICX switches requires manual console access, firmware updates, and configuration — time-consuming and error-prone at scale.
+**Problem:** Provisioning new RUCKUS ICX switches requires manual console
+access, firmware updates, and configuration — time-consuming and error-prone
+at scale.
 
-**Solution:** A zero-touch provisioning system with four interfaces: edge agents (Python services running on-site that discover switches via LLDP and handle the provisioning workflow), a cloud web dashboard (React) for monitoring and management, a native iOS app (Swift) for field technicians, and an AI chat interface for natural language provisioning commands.
+**Solution:** A distributed zero-touch provisioning system. Edge agents
+(Python services deployed on-site) discover switches via LLDP, handle the
+full provisioning workflow locally, and stream events to a cloud dashboard.
+Four interfaces to the same engine: edge agents, a React web dashboard, a
+native SwiftUI iOS app for field technicians, and an AI chat interface
+(OpenRouter) for natural language provisioning commands.
 
-**Notable:** Four different interfaces to the same provisioning engine, including natural language. The iOS app uses SwiftUI and communicates with the same FastAPI backend as the web dashboard.
+**Notable:** Edge agents keep working when cloud connectivity drops — ZTP
+doesn't stall because a dashboard is unreachable. MAC-based device tracking
+prevents duplicate provisioning when DHCP leases change.
 
 ### [r1-api](https://github.com/neuralconfig/r1-api)
 
-**Problem:** RUCKUS One (R1) is a cloud network management platform with a REST API but no official Python SDK, making automation require raw HTTP calls and manual token management.
+**Problem:** RUCKUS One is a cloud network management platform with a REST API
+but no official Python SDK, making automation painful.
 
-**Solution:** A Python SDK with ~85% API coverage, organized into modular namespaces (venues, APs, switches, WLANs, clients, DPSKs). Handles OAuth2 token lifecycle automatically, provides typed responses, and follows Python library conventions so it feels native.
+**Solution:** A Python SDK covering ~85% of the core API, organized into
+modular namespaces (venues, APs, switches, WLANs, clients, DPSKs). Handles
+OAuth2 token lifecycle, provides typed responses, and ships with CLI utilities
+for common operations: bulk AP reboots, support log collection, L3 ACL import
+from CSV, and inventory reporting.
 
-**Demonstrates:** Library design — clean public API surface, separation of HTTP concerns from domain logic, consistent patterns across namespaces, comprehensive error handling.
+**Demonstrates:** Library design — clean public API, separation of HTTP
+transport from domain logic, consistent patterns across namespaces.
 
 ## Technology Stack
+
+*Only technologies used in the repositories above.*
 
 **Languages:** Python, JavaScript/Node.js, Swift
 
