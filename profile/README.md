@@ -68,15 +68,38 @@ from CSV, and inventory reporting.
 **Demonstrates:** Library design — clean public API, separation of HTTP
 transport from domain logic, consistent patterns across namespaces.
 
+### [jira-analyzer](https://github.com/neuralconfig/jira-analyzer)
+
+**Problem:** Product teams receive hundreds of feature requests but lack
+systematic methods to evaluate relevance across market segments, identify
+duplicates, or correlate requests with revenue data. Manual triage doesn't
+scale and introduces inconsistency.
+
+**Solution:** An AI-powered analysis pipeline using local LLMs (Ollama) with
+a tiered model cascade — starting at 1.7b parameters and escalating to 20b
+based on confidence scores. Rates every FR across configurable market verticals
+in a single LLM call for cross-vertical consistency, then runs pairwise
+priority ranking per vertical using binary search to minimize comparisons.
+Three-stage duplicate detection: rapidfuzz token matching → sentence-transformer
+semantic similarity → LLM classification (duplicate / related / distinct).
+Integrates Jira for FR extraction, Salesforce for revenue correlation, and
+publishes analysis dashboards to Confluence.
+
+**Notable:** Market verticals are configuration-driven (add or remove segments
+by editing JSON, no code changes). Checkpoint-based resume means a crashed
+run picks up where it left off instead of re-processing. All rating criteria,
+escalation thresholds, and product contexts are defined in config files and
+modular prompt templates.
+
 ## Technology Stack
 
 *Only technologies used in the repositories above.*
 
 **Languages:** Python, JavaScript/Node.js, Swift
 
-**AI/LLM:** Claude API (Anthropic), OpenRouter, HuggingFace smolagents, LlamaIndex, ChromaDB, Ollama
+**AI/LLM:** Claude API (Anthropic), OpenRouter, HuggingFace smolagents, sentence-transformers, LlamaIndex, ChromaDB, Ollama
 
-**Data:** Pandas, NumPy, SQLite
+**Data:** Pandas, NumPy, SQLite, rapidfuzz, openpyxl
 
 **Web:** FastAPI, Flask, React
 
